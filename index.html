@@ -11,7 +11,7 @@
 <body>
     <h1 id="main-title">Quizz de Programação</h1>
     <!-- SCORE BOARD -->
-    <div id="score-container">
+    <div id="score-container" class="hide">
         <h2>Parabéns</h2>
         <p id="display-score">
             <span>90</span>%
@@ -29,11 +29,11 @@
             <span id="question-text">Qual é a unidade de memida para metros?</span>
         </p>
         <div id="answers-box">
-            <button class="correct-answer">
+            <button>
                 <span class="btn-letter">a</span>
                 <span class="question-answer">m</span>
             </button>
-            <button class="wrong-answer">
+            <button>
                 <span class="btn-letter">b</span>
                 <span class="question-answer">km</span>
             </button>
@@ -49,8 +49,8 @@
     </div>
 
     <!-- TEMPLATE RESPOSTA -->
-    <button>
-        <span class="answer-template hide" class="btn-letter">a</span>
+    <button class="answer-template hide">
+        <span class="btn-letter">a</span>
         <span class="question-answer">m</span>
     </button>
 </body>
