@@ -190,5 +190,16 @@ function hideOrShowQuizz() {
   scoreContainer.classList.toggle("hide");
 }
 
+// Reiniciar Quizz
+const restartBtn = document.querySelector("#restart");
+
+restartBtn.addEventListener("click", function(){
+  // Zerar o jogo
+  actualQuestion = 0;
+  points = 0;
+  hideOrShowQuizz();
+  init();
+});
+
 //Inicialização do Quizz
 init();
