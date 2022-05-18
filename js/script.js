@@ -154,9 +154,40 @@ function nextQuestion() {
     // Verifica se ainda há perguntas
     if(actualQuestion >= questions.length){
       // Apresenta a msg de sucesso
+      showSucessMessage();
+      return;
     }
     createQuestion(actualQuestion);
   }, 1500);
+}
+
+// Exibe a tela final
+function showSucessMessage() {
+  hideOrShowQuizz();
+
+  // Trocar dados da tela de sucesso
+
+  // Calcular o score
+  const score = ((points / questions.length) * 100).toFixed(2);
+  const displayScore = document.querySelector("#display-score span");
+
+  displayScore.textContent = score.toString();
+
+  // Alterar o número de perguntas corretas
+  const correctAnswers = document.querySelector("#correct-answers");
+
+  correctAnswers.textContent = points;
+
+  // Alterar o total de perguntas
+  const totalQuestions = document.querySelector("#questions-qty");
+
+  totalQuestions.textContent = questions.length;
+}
+
+// Mostra ou esconde o score
+function hideOrShowQuizz() {
+  quizzContainer.classList.toggle("hide");
+  scoreContainer.classList.toggle("hide");
 }
 
 //Inicialização do Quizz
